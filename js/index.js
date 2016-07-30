@@ -16,6 +16,7 @@ $(function(){
 		$('.confirm').addClass('show');
 	});
 	$('.cqueding').on('click',function(){
+		alert(1);
 		window.close();
 	});
 	$('.cfanhui').on('click',function(){

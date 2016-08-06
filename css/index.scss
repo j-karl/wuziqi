@@ -161,10 +161,13 @@ body{
 .top{
 	width:100%;
 	height:50px;
+	display: none;
+}
+.top.show{
+	display: block;
 }
 .title{
 	width:100%;
-	// background:#0A0909;
 	position:absolute;
 	z-index: 100;
 	.words{
@@ -188,6 +191,10 @@ body{
 	margin:0 auto;
 	// padding-left:150px;
 	overflow:hidden;
+	display: none;
+}
+.bottom.show{
+	display: block;
 }
 
 

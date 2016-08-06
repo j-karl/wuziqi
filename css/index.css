@@ -155,6 +155,11 @@ body {
 .top {
   width: 100%;
   height: 50px;
+  display: none;
+}
+
+.top.show {
+  display: block;
 }
 
 .title {
@@ -181,6 +186,11 @@ body {
   background-position: right -100px;
   margin: 0 auto;
   overflow: hidden;
+  display: none;
+}
+
+.bottom.show {
+  display: block;
 }
 
 .mid {

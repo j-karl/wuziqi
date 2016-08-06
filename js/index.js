@@ -6,17 +6,20 @@ $(function(){
 
 	$('.renji').on('click',function(){
 		$('.bounds').addClass('noshow');
+		('.top').addClass('show');
+		('.bottom').addClass('show');
 		isAi = true;
 	});
 	$('.renren').on('click',function(){
 		$('.bounds').addClass('noshow');
+		('.top').addClass('show');
+		('.bottom').addClass('show');
 		isAi = false;
 	});
 	$('.quitGame').on('click',function(){
 		$('.confirm').addClass('show');
 	});
 	$('.cqueding').on('click',function(){
-		// alert(1);
 		window.close();
 	});
 	$('.cfanhui').on('click',function(){
@@ -251,7 +254,6 @@ $(function(){
 	}
 	function ai(){
 		var zuobiao;
-		console.log(kongbai);
 		var max = -Infinity;
 		for(var i in kongbai){
 			var weixie = panduan(kongbai[i],hei);
@@ -269,8 +271,6 @@ $(function(){
 				zuobiao2 = kongbai[i];
 			}
 		}
-		console.log(zuobiao);
-		console.log(zuobiao2);
 		return (max>max2)?zuobiao:zuobiao2;
 	}
 

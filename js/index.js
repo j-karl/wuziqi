@@ -6,14 +6,14 @@ $(function(){
 
 	$('.renji').on('click',function(){
 		$('.bounds').addClass('noshow');
-		('.top').addClass('show');
-		('.bottom').addClass('show');
+		$('.top').addClass('show');
+		$('.bottom').addClass('show');
 		isAi = true;
 	});
 	$('.renren').on('click',function(){
 		$('.bounds').addClass('noshow');
-		('.top').addClass('show');
-		('.bottom').addClass('show');
+		$('.top').addClass('show');
+		$('.bottom').addClass('show');
 		isAi = false;
 	});
 	$('.quitGame').on('click',function(){

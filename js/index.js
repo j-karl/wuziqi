@@ -3,28 +3,33 @@ $(function(){
 	var state;
 	var isAi;
 	var flag = true;
-
+	//人机对战按钮
 	$('.renji').on('click',function(){
 		$('.bounds').addClass('noshow');
 		$('.top').addClass('show');
 		$('.bottom').addClass('show');
 		isAi = true;
 	});
+	//人人对战按钮
 	$('.renren').on('click',function(){
 		$('.bounds').addClass('noshow');
 		$('.top').addClass('show');
 		$('.bottom').addClass('show');
 		isAi = false;
 	});
+	// 退出游戏
 	$('.quitGame').on('click',function(){
 		$('.confirm').addClass('show');
 	});
+	//退出游戏中的确定按钮
 	$('.cqueding').on('click',function(){
 		window.close();
 	});
+	//退出游戏中的取消按钮
 	$('.cfanhui').on('click',function(){
 		$('.confirm').removeClass('show');
 	});
+	//进入游戏之后的开始按钮
 	$('.start').on('click',function(){
 		if(state == undefined||state == null){
 			start();
@@ -35,7 +40,7 @@ $(function(){
 			start();
 		}
 	});
-
+	//认输按钮
 	$('.admitDefeat').on('click',function(){
 		if(state == 'play'){
 			endTime();
@@ -50,12 +55,14 @@ $(function(){
 		 	},1000);
 		}
 	});
+	//重新开始按钮
 	$('.restart').on('click',function(){
 		$('.aDtishi').removeClass('show');
 		$('.qipan').empty();
 		flag = true;
 		start();
 	});
+	//认输之后返回的按钮
 	$('.quit').on('click',function(){
 		$('.bounds').removeClass('noshow');
 		$('.aDtishi').removeClass('show');
@@ -64,6 +71,7 @@ $(function(){
 		endTime1();
 		state = 'over';
 	});
+	//返回游戏界面
 	$('.fan').on('click',function(){
 		$('.bounds').removeClass('noshow');
 		$('.aDtishi').removeClass('show');
@@ -72,9 +80,13 @@ $(function(){
 		endTime1();
 		state = 'over';
 	});
+
+	//悔棋操作
 	$('.regret').on('click',function(){
+
 		var changdu = getJsonLength(hei);
 		var changdu1 = getJsonLength(bai);
+		
 		if(isAi == true){
 			if(state == 'play'){
 				if(changdu){
@@ -92,7 +104,6 @@ $(function(){
 					var b = arrBai[parseInt(arrBai.length)-1];
 					var lastBai = b.split('_').join('-');
 					$('#'+lastBai).removeClass('baizi');
-
 					delete hei[h];
 					delete bai[b];
 					kongbai[h] = {x:h.split('_')[0],y:h.split('_')[1]};
@@ -184,7 +195,7 @@ $(function(){
 				.appendTo(qipan);
 			}
 		}
-		console.log(kongbai);
+		// console.log(kongbai);
 		for(var i=0; i<15; i++){
 			$('<b>').addClass('shuxian').appendTo(qipan);
 		}
@@ -204,10 +215,11 @@ $(function(){
 				var pos = $(this).data('pos');
 				hei[pos.x+'_'+pos.y] = true;
 				delete kongbai[pos.x+'_'+pos.y];
+				// console.log(kongbai);
 				if(panduan(pos,hei)>=5){
 					$('.qizi').off('click');
 					$('.admitDefeat').off('click');
-					$('.regret').off('click');
+					// $('.regret').off('click');
 					$('.aDtishi').addClass('show')
 					$('.renshuword').html('黑棋胜');
 					return;
@@ -216,6 +228,7 @@ $(function(){
 				endTime();
 				startTime1();
 				if(isAi){
+					console.log(kongbai);
 					var pos = ai();
 					$('#'+pos.x+'-'+pos.y).addClass('baizi');
 					bai[pos.x+'_'+pos.y] = true;
@@ -223,8 +236,8 @@ $(function(){
 					console.log(kongbai);
 					if(panduan(pos,bai) >= 5){
 						$('.qizi').off('click');
-						$('.admitDefeat').off('click');
-						$('.regret').off('click');
+						// $('.admitDefeat').off('click');
+						// $('.regret').off('click');
 						$('.aDtishi').addClass('show')
 						$('.renshuword').html('白棋胜');
 					}
@@ -240,8 +253,8 @@ $(function(){
 				bai[pos.x+'_'+pos.y] = true;
 				if(panduan(pos,bai)>=5){
 					$('.qizi').off('click');
-					$('.admitDefeat').off('click');
-					$('.regret').off('click');
+					// $('.admitDefeat').off('click');
+					// $('.regret').off('click');
 					$('.aDtishi').addClass('show')
 					$('.renshuword').html('白棋胜');
 				}
@@ -250,11 +263,13 @@ $(function(){
 				flag = true;
 			}
 		});
-
 	}
 	function ai(){
 		var zuobiao;
 		var max = -Infinity;
+		console.log(hei);
+		console.log(bai);
+		console.log(kongbai);
 		for(var i in kongbai){
 			var weixie = panduan(kongbai[i],hei);
 			if(weixie>max){
@@ -266,12 +281,12 @@ $(function(){
 		var max2 = -Infinity;
 		for(var i in kongbai){
 			var weixie = panduan(kongbai[i],bai);
-			if(weixie>max2){
+			if(weixie>=max2){
 				max2 = weixie;
 				zuobiao2 = kongbai[i];
 			}
 		}
-		return (max>max2)?zuobiao:zuobiao2;
+		return (max>=max2)?zuobiao:zuobiao2;
 	}
 
 	function panduan(pos,biao){
@@ -311,7 +326,7 @@ $(function(){
 		while(biao[(tx-1)+'_'+(ty+1)]){
 			zx++;tx--;ty++;
 		}
-
+		console.log(Math.max(h,s,zx,yx));
 		return Math.max(h,s,zx,yx);
 	}
 

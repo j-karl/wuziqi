@@ -1,5 +1,5 @@
 *{
-	font-family:'微软雅黑';
+	font-family:'苹方';
 }
 body{
 	margin:0;
@@ -19,7 +19,6 @@ body{
 	width:100%;
 	height:700px;
 	background-image:url(../img/jiemian2.jpg);
-	// background-color:#148F50;
 	background-repeat:no-repeat;
 	background-size:cover;
 	position:absolute;
@@ -28,7 +27,6 @@ body{
 	z-index:998;
 	opacity:1;
 	display:block;
-	// @extend %juzhong;
 }
 .bounds.noshow{
 	opacity:1;
@@ -37,10 +35,8 @@ body{
 }
 
 .renji{
-
 	width:200px;
 	height:80px;
-	// background:#2C9869;
 	position:absolute;
 	left:0px;
 	right: 0;
@@ -53,15 +49,12 @@ body{
 	font-size:26px;
 	font-family:'';
 	color:#E3E3E3;
-	// left:700px;
-	// top:100px;
 	cursor:pointer;
 	z-index:999;
 }
 .renren{
 	width:200px;
 	height:80px;
-	// background:#2C9869;
 	position:absolute;
 	left:0px;
 	right: 0;
@@ -74,15 +67,12 @@ body{
 	font-size:26px;
 	font-family:'';
 	color:#E3E3E3;
-	// left:700px;
-	// top:100px;
 	cursor:pointer;
 	z-index:999;
 }
 .quitGame{
 	width:200px;
 	height:80px;
-	// background:#2C9869;
 	position:absolute;
 	left:0px;
 	right: 0;
@@ -95,8 +85,6 @@ body{
 	font-size:26px;
 	font-family:'';
 	color:#E3E3E3;
-	// left:700px;
-	// top:100px;
 	cursor:pointer;
 	z-index:999;
 }
@@ -111,7 +99,6 @@ body{
 	opacity:0;
 	display:none;
 	z-index:999;
-	// margin-left:-50px;
 	transition:all 0.5s ease;
 	.cword{
 		width:200px;
@@ -150,8 +137,6 @@ body{
 	}
 }
 
-
-
 .confirm.show{
 	transform:translateY(0);
 	opacity:1;
@@ -173,10 +158,8 @@ body{
 	.words{
 		width: 200px;
 		height: 50px;
-		// background:#640849;
 		margin:0 auto;
 		background-image:url(../img/wuziqi.png);
-		// background-size:500px 700px;
 		background-repeat:no-repeat;
 		background-position:center center;
 	}
@@ -189,22 +172,12 @@ body{
 	background-repeat:no-repeat;
 	background-position:right -100px;
 	margin:0 auto;
-	// padding-left:150px;
 	overflow:hidden;
 	display: none;
 }
 .bottom.show{
 	display: block;
 }
-
-
-
-// .bg{
-// 	// @extend %juzhong;
-// 	width:100%;
-// 	height:100%;
-// 	background:#ccc;
-// }
 
 $width : 600px;
 .mid{
@@ -216,7 +189,6 @@ $width : 600px;
 	@extend %juzhong;
 	width:$width;
 	height:$width;
-	// background-image:url(../img/back.jpg);
 	opacity:0.8;
 	position:relative;
 	margin-top:10px;
@@ -252,8 +224,6 @@ $width : 600px;
 		left: 7*($width/15)+$width/30;
 		top: 7*($width/15)+$width/30;
 		transform:translate3d(-45%,-45%,0);
-	//   animation: showa 2s infinite cubic-bezier(0,0,1,1),showa 2s infinite cubic-bezier(0,1,0,1);
-
 	}
 }
 
@@ -269,19 +239,12 @@ $width : 600px;
 }
 
 	.qipan .heidian:nth-of-type(1){
-		// top:3*($width/15)+$width/30;
-		// left: 3*($width/15)+$width/30;
 		top:7*($width/15)+$width/30;
 		left: 7*($width/15)+$width/30;
-		 // transform: rotateX(-90deg) rotateY(0deg) translateY(-75px);
-		// transition: all 1s ease;
-		// animation:showa 5s ease forwards;
-	 	 animation: showa 1s forwards cubic-bezier(0,0,1,1),showb 1s forwards cubic-bezier(0,1,0,1);
+	 	animation: showa 1s forwards cubic-bezier(0,0,1,1),showb 1s forwards cubic-bezier(0,1,0,1);
 
 	}
 	.qipan .heidian:nth-of-type(2){
-		// top:3*($width/15)+$width/30;
-		// left: 11*($width/15)+$width/30;
 		top:7*($width/15)+$width/30;
 		left: 7*($width/15)+$width/30;
 	 	 animation: showc 1s forwards cubic-bezier(0,1,0,1),showd 1s forwards cubic-bezier(0,0,1,1);
@@ -290,22 +253,16 @@ $width : 600px;
 	.qipan .heidian:nth-of-type(3){
 		top:7*($width/15)+$width/30;
 		left: 7*($width/15)+$width/30;
-
 	}
 	.qipan .heidian:nth-of-type(4){
-		// top:11*($width/15)+$width/30;
-		// left: 3*($width/15)+$width/30;
 		top:7*($width/15)+$width/30;
 		left: 7*($width/15)+$width/30;
 	 	animation: showe 1s forwards cubic-bezier(0,1,0,1),showf 1s forwards cubic-bezier(0,0,1,1);
 	}
 	.qipan .heidian:nth-of-type(5){
-		// top:11*($width/15)+$width/30;
-		// left: 11*($width/15)+$width/30;
 		top:7*($width/15)+$width/30;
 		left: 7*($width/15)+$width/30;
 	 	animation: showg 1s forwards cubic-bezier(0,0,1,1),showh 1s forwards cubic-bezier(0,1,0,1);
-
 	}
 
 
@@ -380,20 +337,17 @@ $width : 600px;
 	margin:$width/200;
 	border-radius:50%;
 	float:left;
-	// background:red;
 	opacity:0;
 	position:relative;
 	z-index:55;
 }
 .heizi{
 	opacity:1;
-	// background:black;
 	background-size :34px 35px;
 	background-image:url(../img/heizi.png);
 }
 .baizi{
 	opacity:1;
-	// background:white;
 	background-size :$width/15-$width/100 $width/15-$width/100;
 	background-image:url(../img/baizi.png);
 
@@ -425,35 +379,32 @@ $width : 600px;
 	width:$width/3;
 	height:$width;
 	position:absolute;
-	// left:-300px;
-	// top:0;
-	// background:#D18A2E;
 }
 .shangfang{
 	width:100%;
 	height:$width/2-$width/8;
-	// background:#043C6A;
 	background-image:url(../img/border.png);
 
 }
 .shang{
 		width: 180px;
 		height:100px;
-		// background:#7C0909;
 		margin-left: 10px;
 		padding-top:10px;
 		.touxiang{
 			width: 80px;
 			height: 110px;
-			// background-image:url(../img/guai.jpg);
 			background-size:80px 110px;
 			margin: 2px 2px;
 			float: left;
+			font-size: 24px;
+			text-align: center;
+			line-height: 110px;
+			font-family: '苹方';
 		}
 		.zt{
 			width: 80px;
 			height: 110px;
-			// background: #BAB9B9;
 			float: left;
 			margin: 2px 2px;
 			overflow: hidden;
@@ -462,7 +413,6 @@ $width : 600px;
 	.xia{
 		width: 180px;
 		height: 90px;
-		// background:#5E21D4;
 		margin-left: 10px;
 		margin-top: 10px;
 		padding-top:10px;
@@ -477,8 +427,6 @@ $width : 600px;
 	width:100%;
 	height:$width/2-$width/8;
 	background-image:url(../img/border.png);
-
-	// background:#043C6A;
 }
 .poster{
 	width:180px;;
@@ -487,16 +435,12 @@ $width : 600px;
 	text-align:center;
 	line-height:($width*2)/8;
 	font-size:24px;
-
-	// background:#5F5050;
 }
 
 .right{
 	width:$width/3;
 	height:$width;
 	float:left;
-	// background:#0E044C;
-	// margin-left:10px;
 }
 .start{
 	width:$width/6;
@@ -504,7 +448,6 @@ $width : 600px;
 	background-image:url(../img/gouer.png);
 	background-size:60px 58px;
 	background-repeat:no-repeat;
-	// position:absolute;
 	text-align:center;
 	line-height:$width/10;
 	margin-left:$width/12;
@@ -519,7 +462,6 @@ $width : 600px;
 .admitDefeat{
 	width:$width/6;
 	height:$width/10;
-	// background:#3F0471;
 	background-image:url(../img/gouer.png);
 	background-size:60px 58px;
 	background-repeat:no-repeat;
@@ -544,7 +486,6 @@ $width : 600px;
 	transform:translateY(-500px);
 	opacity:0;
 	z-index:998;
-	// margin-left:-50px;
 	transition:all 0.5s ease;
 	.renshuword{
 		width:200px;
@@ -605,7 +546,6 @@ $width : 600px;
 .regret{
 	width:$width/6;
 	height:$width/10;
-	// background:#3F0471;
 	background-image:url(../img/gouer.png);
 	background-size:60px 58px;
 	background-repeat:no-repeat;
@@ -639,7 +579,6 @@ $width : 600px;
 .fan{
 	width:$width/6;
 	height:$width/10;
-	// background:#3F0471;
 	background-image:url(../img/gouer.png);
 	background-size:60px 58px;
 	background-repeat:no-repeat;
